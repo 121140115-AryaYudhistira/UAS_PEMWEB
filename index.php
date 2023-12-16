@@ -1,10 +1,5 @@
 <?php
 session_start();
-if (isset($_COOKIE['username'])) {
-    // Redirect to tokobarokah.php if the cookie exists
-    header("Location: tokobarokah.php");
-    exit();
-}
 ?>
 <html>
 
@@ -38,7 +33,7 @@ if (isset($_COOKIE['username'])) {
             var usernameCookie = getCookie('username');
             if (usernameCookie) {
                 // Pre-fill the username field with the value from the cookie
-                usernameInput.value = usernameCookie;
+                window.location.href = 'tokobarokah.php';
             }
 
             // Check if a success message exists in the session

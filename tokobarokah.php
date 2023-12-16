@@ -1,11 +1,6 @@
 <?php
 ob_start();
 session_start();
-if (!isset($_COOKIE['username'])) {
-    // Redirect to another page or display an error message
-    header("Location: login.php"); // Change 'login.php' to the appropriate login page
-    exit();
-}
 include "db_connect.php";
 if (isset($_GET['logout'])) {
     // Unset all session variables
@@ -37,6 +32,29 @@ if (isset($_GET['logout'])) {
 
 <body>
     <div class="container">
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Check if the 'username' cookie exists
+                var usernameCookie = getCookie('username');
+
+                if (!usernameCookie) {
+                    // Redirect to the login page if the cookie does not exist
+                    window.location.href = 'login.php';
+                }
+            });
+
+            // Function to get the value of a cookie by name
+            function getCookie(name) {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    if (cookie.indexOf(name + '=') === 0) {
+                        return cookie.substring(name.length + 1);
+                    }
+                }
+                return null;
+            }
+        </script>
         <?php
         if (isset($_SESSION['username'])) {
             echo "<div style='display:flex; align-self:end; align-items: center; justify-content:center;'>";
