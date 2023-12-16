@@ -177,8 +177,8 @@ Penjelasan:**
 
 **4.2 (10%) Implementasikan pengelolaan state menggunakan cookie dan browser storage pada sisi client menggunakan JavaScript.
 Penjelasan:**  
-- Session digunakan pada login.php dan index.php untuk menyimpan username dan password yang user inputkan. Jika berhasil login, maka pada tokobarokah.php akan mengambil value session username untuk menampilkannya di page.
-- Session digunakan pada semua fungsi CRUD agar dapat menampilkan session log ketika berhasil/gagal melakukan operasi CRUD
+- Cookie digunakan pada index.php dengan cara mengambil value username dengan DOM kemudian menggunakan fungsi SetCookie lalu ketika sudah ada cookie, maka fungsi GetCookie akan melakukan validasi dan langsung malakukan redirect ke tokobarokah.php
+- Cookie digunakan pada tokobarokah.php dengan melakukan fungsi getCookie untuk validasi cookie, jika tidak ada cookie maka user akan dikembalikan ke index.php
 
 # Bagian Bonus: Hosting Aplikasi Web (Bobot: 20%)
 
