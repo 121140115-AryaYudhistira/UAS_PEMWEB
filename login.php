@@ -19,7 +19,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         header("Location: index.php");
         exit();
     } else {
-        // Use prepared statement to prevent SQL injection
+        // Untuk mencegah sql injection
         $query = "SELECT * FROM akun WHERE username = ? AND password = ?";
         $stmt = mysqli_prepare($conn, $query);
         mysqli_stmt_bind_param($stmt, "ss", $username, $password);
@@ -32,7 +32,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             $_SESSION['name'] = $row['name'];
             $_SESSION['id'] = $row['id'];
 
-            // Set a cookie for the username
+            // setcookie
             setcookie('username', $row['username'], time() + (86400 * 30), "/"); // 86400 = 1 day
 
             header("Location: tokobarokah.php");

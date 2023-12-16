@@ -5,13 +5,10 @@ include "db_connect.php";
 if (isset($_GET['logout'])) {
     // Unset all session variables
     $_SESSION = array();
-
     // Destroy the session
     session_destroy();
-
     // Delete the 'username' cookie
     setcookie('username', '', time() - 3600, '/');
-
     // Redirect to the login page or any other appropriate page
     header("Location: index.php");
     exit();
@@ -34,16 +31,15 @@ if (isset($_GET['logout'])) {
     <div class="container">
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                // Check if the 'username' cookie exists
+                // Cek apakah ada cookie
                 var usernameCookie = getCookie('username');
 
                 if (!usernameCookie) {
-                    // Redirect to the login page if the cookie does not exist
                     window.location.href = 'login.php';
                 }
             });
 
-            // Function to get the value of a cookie by name
+            // Fungsi fetch cookie berdasarkan username
             function getCookie(name) {
                 var cookies = document.cookie.split(';');
                 for (var i = 0; i < cookies.length; i++) {
@@ -55,6 +51,7 @@ if (isset($_GET['logout'])) {
                 return null;
             }
         </script>
+        //fungsi fetch username untuk ditampilkan di page
         <?php
         if (isset($_SESSION['username'])) {
             echo "<div style='display:flex; align-self:end; align-items: center; justify-content:center;'>";
@@ -118,7 +115,6 @@ if (isset($_GET['logout'])) {
 
         if (isset($_GET['search'])) {
             $search = $_GET['search'];
-            // Check if there is an existing WHERE clause
             $sql .= (strpos($sql, 'WHERE') !== false) ? " AND (seri LIKE '%$search%' OR nama LIKE '%$search%')" : " WHERE (seri LIKE '%$search%' OR nama LIKE '%$search%')";
         }
 
@@ -159,8 +155,6 @@ if (isset($_GET['logout'])) {
                 <span class="close" onclick="closeModal()">&times;</span>
                 <form method="post" id="formBarang">
                     <h3><span id="modalTitle">Tambah Data</span></h3>
-                    <!-- Tambahkan input hidden untuk menyimpan aksi -->
-
                     <input type="hidden" name="action" id="action">
                     <div class="input-container">
                         <label for="seri">Seri:</label>
@@ -223,16 +217,13 @@ if (isset($_GET['logout'])) {
             var confirmDelete = confirm("Apakah Anda yakin ingin menghapus data dengan seri " + seri + "?");
 
             if (confirmDelete) {
-                // Redirect to delete action
                 window.location.href = "tokobarokah.php?hapus=" + seri;
             }
         }
 
         function logout() {
             var confirmLogout = confirm("Apakah Anda yakin ingin logout?");
-
             if (confirmLogout) {
-                // Redirect to the logout action
                 window.location.href = "tokobarokah.php?logout=1";
             }
         }

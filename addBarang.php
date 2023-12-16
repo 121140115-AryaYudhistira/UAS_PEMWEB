@@ -1,6 +1,6 @@
 <?php include "db_connect.php";
 session_start();
-// Tambahkan data jika form disubmit
+// menambahkan data jika form disubmit
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["action"]) && $_POST["action"] === "add") {
     $seri = $_POST["seri"];
     $nama = $_POST["nama"];
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["action"]) && $_POST["a
     if ($result_check_seri->num_rows > 0) {
         echo "Error: seri sudah ada dalam database.";
     } else {
-        // Tambahkan data baru jika seri belum ada
+        // menambahkan data baru jika seri belum ada
         $insert_sql = "INSERT INTO barang (seri, nama, merk, kategori, harga, stok) VALUES ('$seri', '$nama', '$merk','$kategori', '$harga', '$stok')";
         if ($conn->query($insert_sql) === TRUE) {
             $_SESSION["logadd"] = "Data berhasil dimasukkan.";

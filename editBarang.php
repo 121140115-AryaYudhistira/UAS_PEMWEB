@@ -12,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["seri_lama"]) && isset(
     $harga = $_POST["harga"];
     $stok = $_POST["stok"];
 
-    // Check if the serial number has been modified
     if ($seri_baru !== $seri_lama) {
         // Periksa apakah seri baru sudah ada dalam database (selain seri yang sedang diubah)
         $check_seri_sql = "SELECT * FROM barang WHERE seri='$seri_baru'";
@@ -24,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["seri_lama"]) && isset(
         }
     }
 
-    // Tambahkan data baru jika seri belum ada
+    // Edit data baru jika seri belum ada
     $update_sql = "UPDATE barang SET seri='$seri_baru', nama='$nama', merk='$merk', kategori='$kategori', harga='$harga', stok='$stok' WHERE seri='$seri_lama'";
 
     if ($conn->query($update_sql) === TRUE) {

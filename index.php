@@ -24,31 +24,18 @@ session_start();
         <button type="submit">Login</button>
     </form>
 
-    <!-- Pindahkan skrip JavaScript ke bagian bawah sebelum penutup tag </body> -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var usernameInput = document.querySelector('.username'); // Menggunakan querySelector untuk mencari class 'username'
 
-            // Check if the 'username' cookie exists
+            // Cek apakah cookie ada
             var usernameCookie = getCookie('username');
             if (usernameCookie) {
-                // Pre-fill the username field with the value from the cookie
                 window.location.href = 'tokobarokah.php';
-            }
-
-            // Check if a success message exists in the session
-            var successMessage = '<?php echo isset($_SESSION['success']) ? $_SESSION['success'] : ''; ?>';
-
-            // Display an alert if a success message exists
-            if (successMessage.trim() !== '') {
-                alert("Login Successful!\n" + successMessage);
-
-                // Clear the success message in the session
-                <?php unset($_SESSION['success']); ?>
             }
         });
 
-        // Function to get the value of a cookie by name
+        // fungsi fetch cookie berdasarkan username
         function getCookie(name) {
             var cookies = document.cookie.split(';');
             for (var i = 0; i < cookies.length; i++) {
