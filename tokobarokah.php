@@ -51,7 +51,7 @@ if (isset($_GET['logout'])) {
                 return null;
             }
         </script>
-        //fungsi fetch username untuk ditampilkan di page
+        <!-- fungsi fetch username untuk ditampilkan di page -->
         <?php
         if (isset($_SESSION['username'])) {
             echo "<div style='display:flex; align-self:end; align-items: center; justify-content:center;'>";
