@@ -1,0 +1,269 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.input-container {
+  display: grid;
+  row-gap: 20px;
+  grid-template-columns: 1fr 3fr;
+  /* Adjusted column widths */
+}
+
+.input-container label {
+  grid-column: 1;
+  /* Label column */
+}
+
+.input-container input,
+.input-container select {
+  grid-column: 2;
+  width: 80%;
+  margin-left: -80px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.add-button {
+  cursor: pointer;
+  margin-top: 10px;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.search-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+body {
+  background-color: whitesmoke;
+  font-family: Inter;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: none;
+  border-radius: 20px;
+  padding: 50px;
+  width: 85%;
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+select {
+  margin-top: 20px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #1e293b;
+  padding: 10px 8px 10px 8px;
+  border: none;
+  border-radius: 6px;
+  color: #f1f5f9;
+}
+
+input[type="submit"],
+button {
+  margin-top: 20px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #1e293b;
+  padding: 10px 8px 10px 8px;
+  border: none;
+  border-radius: 6px;
+  color: #f1f5f9;
+}
+
+input[type="submit"]:hover,
+button:hover {
+  transform: scale(1.1);
+  transition: all;
+  transition-duration: 500;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input[type="submit"]:active,
+button:active {
+  transform: scale(0.9);
+  opacity: 0.7;
+  transition: all;
+  transition-duration: 500;
+}
+
+input {
+  margin-top: -5px;
+  padding: 11px;
+  padding-left: 16px;
+  border: none;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+
+  th,
+  td {
+    max-width: 150px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .container {
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .table-container {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  tr {
+    border-bottom: 1px solid #ddd;
+  }
+
+  td,
+  th {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  .search-box {
+    margin-bottom: 20px;
+  }
+
+  .search-box form {
+    width: 100%;
+  }
+
+  label {
+    margin-bottom: 5px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  select {
+    width: 90%;
+    margin-top: 5px;
+  }
+
+  input[type="submit"],
+  .add-button {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .logadd {
+    margin-top: 10px;
+  }
+
+  .modal-content {
+    padding: 10px;
+  }
+
+  .modal-content h3 {
+    margin-bottom: 10px;
+  }
+
+  .input-container label {
+    margin-top: 5px;
+  }
+
+  .input-container input,
+  .input-container select {
+    width: calc(100% - 20px);
+    margin-left: 0;
+  }
+
+  .close {
+    font-size: 20px;
+  }
+
+  .add-button {
+    margin-top: 10px;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .actions {
+    font-size: 14px;
+  }
+}
