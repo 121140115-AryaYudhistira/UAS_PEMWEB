@@ -18,8 +18,9 @@
 **1.2 (15%) Buatlah beberapa event untuk menghandle interaksi pada halaman web**
 
 **Penjelasan:**  
-- Event handler digunakan pada index.php untuk menyimpan cookie saat adanya event submit pada form login.
-- Event listener digunakan pada tokobarokah.php untuk menampilkan dan menutup modal edit/add data.
+- Event listener digunakan pada index.php untuk menyimpan cookie saat adanya event submit pada form login.
+- Event handler digunakan pada tokobarokah.php untuk menampilkan dan menutup modal edit/add data. Menggunakan fungsi event.target
+- Event listener digunakan pada tokobarokah.php untuk melakukan checking cookie pada saat ingin mengakses page tokobarokah.php, jika cookie tidak ada maka akan kembali ke index.php, jika ada maka akan dapat mengakses tokobarokah.php.
 
 
 # Bagian 2: Server-side Programming (Bobot: 30%)
