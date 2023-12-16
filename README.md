@@ -1,8 +1,8 @@
 # UAS PEMWEB
 
-**Nama	: Arya Yudhistira
-NIM	: 121140115
-Kelas	: RA**
+**Nama	: Arya Yudhistira**
+**NIM	: 121140115**
+**Kelas	: RA**
 
 
 #  Bagian 1: Client-side Programming (Bobot: 30%)
